@@ -31,8 +31,9 @@ UniKymoButlerSegment[kym_,net_,tD_]:=Module[{rawkym,bool,negkym,out,dim=ImageDim
 	(*normalize kymolines*)
 	negkym=ImageAdjust@Image@Map[#/Mean@#&,ImageData@negkym];
 	(*Run net*)
-	out=Image/@net[{ImageData@ImageResize[negkym,16*Round@N[dim/16]]},TargetDevice->tD];
-	{bool,rawkym,negkym,out}
+	out=net[{ImageData@ImageResize[negkym,16*Round@N[dim/16]]},TargetDevice->tD];
+	If[FailureQ@out,$Failed,
+	{bool,rawkym,negkym,Image/@out}]
 ];
 
 UniKymoButlerTrack[bool_,tmpkym_,out_,binthresh_,minSz_(*default 3*),minFr_(*default 3*)]:=Module[{tmpa,tmpr,antPaths,retPaths,antrks,retrks,dim=ImageDimensions@tmpkym,coloredlines,overlay,ca,cr,labels,overlaylabeled},
@@ -373,8 +374,9 @@ BiKymoButlerSegment[kym_,net_,tD_]:=Module[{rawkym,bool,negkym,pred,dim=ImageDim
 	negkym=If[bool,ColorNegate@rawkym,rawkym];
 	(*normalize kymolines*)
 	negkym=ImageAdjust@Image@Map[#/Mean@#&,ImageData@negkym];
-	pred=Image@net[{ImageData@ImageResize[negkym,16*Round@N[dim/16]]},TargetDevice->tD];
-	{bool,rawkym,negkym,pred}
+	pred=net[{ImageData@ImageResize[negkym,16*Round@N[dim/16]]},TargetDevice->tD];
+	If[FailureQ@pred,$Failed,
+	{bool,rawkym,negkym,Image@pred}]
 ];
 
 BiKymoButlerTrack[pred_,rawkym_,negkym_,bool_,binthresh_,vthr_,vismod_,minSz_,minFr_]:=Module[{dim=ImageDimensions@rawkym,coloredlines,overlay,overlaylabeled,labels,c,ptmp,sel,ovlpIDs,out,paths,pathstmp,inflp,t,seedbin,seeds,allyx,ptrk,trks},
@@ -440,7 +442,6 @@ BiKymoButlerTrack[pred_,rawkym_,negkym_,bool_,binthresh_,vthr_,vismod_,minSz_,mi
 	overlaylabeled=HighlightImage[overlay,Map[ImageMarker[labels[[#,2]]+{0,5},Graphics[{If[bool,Black,White],Text[Style[ToString@#,FontSize->Scaled@.04]]}]]&,Range[Length@labels]]];
 	{rawkym,coloredlines,overlay,overlaylabeled,trks}];
 
-	
 	
 	BiKymoButler[kym_,binthresh_,vthr_,tD_,cnet_,vismod_,minSz_,minFr_]:=Module[
 	{rawkym,negkym,pred,bool},
