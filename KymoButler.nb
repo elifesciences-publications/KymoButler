@@ -10,52 +10,27 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   1553077,      25564]
-NotebookOptionsPosition[   1552199,      25545]
-NotebookOutlinePosition[   1552536,      25560]
-CellTagsIndexPosition[   1552493,      25557]
+NotebookDataLength[   1554799,      25600]
+NotebookOptionsPosition[   1553677,      25576]
+NotebookOutlinePosition[   1554035,      25592]
+CellTagsIndexPosition[   1553992,      25589]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
+ RowBox[{"(*", 
+  RowBox[{
    RowBox[{"Load", " ", "Neural", " ", "networks", " ", 
     RowBox[{"(", 
      RowBox[{
      "depending", " ", "on", " ", "your", " ", "internet", " ", "connection", 
       " ", "this", " ", "might", " ", "take", " ", "up", " ", "to", " ", "a", 
-      " ", "minute"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{
+      " ", "minute"}], ")"}]}], ",", " ", 
    RowBox[{
-    RowBox[{"binet", "=", 
-     RowBox[{"CloudImport", "@", 
-      RowBox[{
-      "CloudObject", "[", 
-       "\"\<https://www.wolframcloud.com/objects/deepmirror/Projects/\
-KymoButler/networks/binet\>\"", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"classnet", "=", 
-     RowBox[{"CloudImport", "@", 
-      RowBox[{
-      "CloudObject", "[", 
-       "\"\<https://www.wolframcloud.com/objects/deepmirror/Projects/\
-KymoButler/networks/classnet\>\"", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"uninet", "=", 
-     RowBox[{"CloudImport", "@", 
-      RowBox[{
-      "CloudObject", "[", 
-       "\"\<https://www.wolframcloud.com/objects/deepmirror/Projects/\
-KymoButler/networks/uninet\>\"", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"decnet", "=", 
-     RowBox[{"CloudImport", "@", 
-      RowBox[{
-      "CloudObject", "[", 
-       "\"\<https://www.wolframcloud.com/objects/deepmirror/Projects/\
-KymoButler/networks/decnet\>\"", "]"}]}]}], ";"}]}]}]], "Input",
+   "You", " ", "can", " ", "save", " ", "them", " ", "locally", " ", 
+    "afterwards", " ", "with", " ", 
+    RowBox[{"Export", "[", "...", "]"}]}]}], "*)"}]], "Input",
  CellChangeTimes->{{3.758882251066403*^9, 3.7588822702534723`*^9}, {
    3.758882313101534*^9, 3.7588823384280443`*^9}, {3.758882487688151*^9, 
    3.758882487827078*^9}, {3.758882527058816*^9, 3.75888254779778*^9}, {
@@ -63,8 +38,50 @@ KymoButler/networks/decnet\>\"", "]"}]}]}], ";"}]}]}]], "Input",
    3.75925333336969*^9}, {3.759253394313202*^9, 3.7592534128987417`*^9}, {
    3.768888409401456*^9, 3.768888420300898*^9}, {3.768888524930183*^9, 
    3.768888601634075*^9}, {3.768889036681574*^9, 3.768889055796462*^9}, 
-   3.768890577519816*^9},ExpressionUUID->"5a500cd2-8e51-486a-9a02-\
+   3.768890577519816*^9, {3.7722772492879343`*^9, 3.772277256993527*^9}, {
+   3.7722773176016407`*^9, 3.7722773452970324`*^9}, {3.772277695927369*^9, 
+   3.772277703103835*^9}, {3.772281956800357*^9, 3.772281960839244*^9}, {
+   3.772282109633231*^9, 3.772282114988505*^9}, {3.772346752878683*^9, 
+   3.77234675427388*^9}},ExpressionUUID->"5a500cd2-8e51-486a-9a02-\
 f53ae3979069"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"binet", "=", 
+   RowBox[{"CloudImport", "@", 
+    RowBox[{
+    "CloudObject", "[", 
+     "\"\<https://www.wolframcloud.com/objects/deepmirror/Projects/KymoButler/\
+networks/Bidrectional_Segmentation_Module_V1_0\>\"", "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"classnet", "=", 
+   RowBox[{"CloudImport", "@", 
+    RowBox[{
+    "CloudObject", "[", 
+     "\"\<https://www.wolframcloud.com/objects/deepmirror/Projects/KymoButler/\
+networks/Classification_Module_V1_0\>\"", "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"uninet", "=", 
+   RowBox[{"CloudImport", "@", 
+    RowBox[{
+    "CloudObject", "[", 
+     "\"\<https://www.wolframcloud.com/objects/deepmirror/Projects/KymoButler/\
+networks/Unidrectional_Segmentation_Module_V1_0\>\"", "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"decnet", "=", 
+   RowBox[{"CloudImport", "@", 
+    RowBox[{
+    "CloudObject", "[", 
+     "\"\<https://www.wolframcloud.com/objects/deepmirror/Projects/KymoButler/\
+networks/Decision_Module_V1_0\>\"", "]"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.77227735484868*^9, 3.772277386428241*^9}, {
+  3.772281966759068*^9, 3.772282047535343*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"ef60a9f7-7699-4226-8ce7-b4b8fcfff371"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
@@ -75,19 +92,23 @@ Cell[BoxData[
    RowBox[{"Get", "[", 
     RowBox[{
      RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
-     "\"\</packages/KymoButler.wl\>\""}], "]"}], "\[IndentingNewLine]", 
+     "\"\</packages/KymoButlerV10.wl\>\""}], "]"}], "\[IndentingNewLine]", 
    RowBox[{"UniKymoButler", "::", "usage"}], "\n", 
    RowBox[{"BiKymoButler", "::", "usage"}]}]}]], "Input",
  CellChangeTimes->{
   3.768889060054225*^9, 3.768889554409245*^9, {3.768889588390765*^9, 
-   3.768889632708645*^9}, {3.7688905726457148`*^9, 
-   3.768890572817992*^9}},ExpressionUUID->"100d043d-35f5-417e-a660-\
-d276bea4be6a"],
+   3.768889632708645*^9}, {3.7688905726457148`*^9, 3.768890572817992*^9}, {
+   3.772282050753519*^9, 3.772282051706037*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"100d043d-35f5-417e-a660-d276bea4be6a"],
 
-Cell[BoxData[
- RowBox[{"kym_", ",", "binthresh_", ",", "vthr_", ",", "tD_", ",", "cnet_", 
-  ",", "vismod_", ",", "minSz_", ",", "minFr_"}]], "Input",ExpressionUUID->\
-"3550a182-722c-4647-9aa7-2c80ba0ad934"],
+Cell[BoxData["\<\"Function analyses a unidirectional kymograph\"\>"], "Output",
+ CellChangeTimes->{3.772280054762928*^9, 3.7723467894404383`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"bed39998-d249-4593-ac9f-553ff184c0d2"],
+
+Cell[BoxData["\<\"Function analyses a bidirectional kymograph\"\>"], "Output",
+ CellChangeTimes->{3.772280054762928*^9, 3.772346789442082*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"354180c6-9991-4d8c-8bd7-bf07cd7ac1c7"]
+}, Open  ]],
 
 Cell[BoxData[
  RowBox[{
@@ -95,8 +116,14 @@ Cell[BoxData[
    RowBox[{"(*", 
     RowBox[{
     "Call", " ", "KymoButler", " ", "on", " ", "example", " ", 
-     "unidirectional", " ", "Kymograph"}], "*)"}], "Subsubsection"], 
-  "\[IndentingNewLine]", 
+     "unidirectional", " ", "Kymograph", " ", 
+     RowBox[{"(", 
+      RowBox[{"EB1", "-", 
+       RowBox[{
+       "GFP", " ", "dynamics", " ", "in", " ", "Drosophila", " ", "axons"}]}],
+       ")"}]}], 
+    StyleBox[
+     RowBox[{"*", ")"}]]}], "Subsubsection"], "\[IndentingNewLine]", 
   RowBox[{"UniKymoButler", "[", 
    RowBox[{
     GraphicsBox[
@@ -4723,10 +4750,13 @@ WD7ak+O+Of6xt3WmQSGOyZDFccCV5+Ypk2lF/B9vPdXO
     RowBox[{"(*", 
      RowBox[{"detection", " ", "threshold"}], "*)"}], ".2", ",", 
     RowBox[{"(*", 
-     RowBox[{"target", " ", "Device", " ", 
-      RowBox[{"(", 
-       RowBox[{"GPU", " ", "or", " ", "CPU"}], ")"}]}], "*)"}], "\"\<CPU\>\"",
-     ",", "uninet", ",", 
+     RowBox[{
+      RowBox[{"target", " ", "Device", " ", 
+       RowBox[{"(", 
+        RowBox[{"GPU", " ", "or", " ", "CPU"}], ")"}]}], ",", " ", 
+      RowBox[{
+      "GPU", " ", "only", " ", "available", " ", "with", " ", "NVIDIA", " ", 
+       "GPUs"}]}], "*)"}], "\"\<CPU\>\"", ",", "uninet", ",", 
     RowBox[{"(*", 
      RowBox[{"minimum", " ", "particle", " ", "size"}], "*)"}], "3", ",", 
     RowBox[{"(*", 
@@ -4737,8 +4767,10 @@ WD7ak+O+Of6xt3WmQSGOyZDFccCV5+Ypk2lF/B9vPdXO
   3.7688897562459717`*^9}, {3.768889826036766*^9, 3.768889836170314*^9}, {
   3.7688899739469023`*^9, 3.768890029350402*^9}, {3.768890080105194*^9, 
   3.768890104500079*^9}, {3.768890338702405*^9, 3.768890343382536*^9}, {
-  3.768890497872532*^9, 3.7688905359538317`*^9}},
- CellLabel->"In[20]:=",ExpressionUUID->"90352288-595b-4194-b3a2-6b3f63ffb574"],
+  3.768890497872532*^9, 3.7688905359538317`*^9}, {3.772277405982243*^9, 
+  3.772277420663086*^9}, {3.7723467682133636`*^9, 
+  3.772346784537381*^9}},ExpressionUUID->"90352288-595b-4194-b3a2-\
+6b3f63ffb574"],
 
 Cell[BoxData[
  StyleBox[
@@ -11684,9 +11716,8 @@ wvTzGKr5saxrrdQvcEpiAnVycchMrWTWTjP+D6yzRj0=
     RowBox[{"minimum", " ", "frame", " ", "number"}], "*)"}], "10"}], 
   "]"}]], "Input",
  CellChangeTimes->{{3.768890143536563*^9, 3.768890202700189*^9}, {
-  3.7688905189291162`*^9, 
-  3.768890520697155*^9}},ExpressionUUID->"c9cc03ab-1acb-43a1-9100-\
-ab59ab5697ed"],
+  3.7688905189291162`*^9, 3.768890520697155*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"c9cc03ab-1acb-43a1-9100-ab59ab5697ed"],
 
 Cell[BoxData[
  RowBox[{
@@ -25543,8 +25574,9 @@ S/EDufLvmVT3g/8BnHnRxA==
    3.768890558782262*^9},ExpressionUUID->"9d1fe46a-b1c6-4666-82ee-\
 d3e6cb629b60"]
 },
-WindowSize->{1461, 933},
-WindowMargins->{{Automatic, 91}, {Automatic, 0}},
+Evaluator->"xtra",
+WindowSize->{1680, 933},
+WindowMargins->{{302, Automatic}, {38, Automatic}},
 FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
 StyleDefinitions->"Default.nb"
 ]
@@ -25559,13 +25591,17 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 1997, 46, 115, "Input",ExpressionUUID->"5a500cd2-8e51-486a-9a02-f53ae3979069"],
-Cell[2558, 68, 634, 16, 94, "Input",ExpressionUUID->"100d043d-35f5-417e-a660-d276bea4be6a"],
-Cell[3195, 86, 207, 3, 30, "Input",ExpressionUUID->"3550a182-722c-4647-9aa7-2c80ba0ad934"],
-Cell[3405, 91, 282835, 4649, 257, "Input",ExpressionUUID->"90352288-595b-4194-b3a2-6b3f63ffb574"],
-Cell[286243, 4742, 319, 8, 37, "Input",ExpressionUUID->"4e84992a-5a0f-4c80-8f2f-aeb015d1794f"],
-Cell[286565, 4752, 422173, 6936, 199, "Input",ExpressionUUID->"c9cc03ab-1acb-43a1-9100-ab59ab5697ed"],
-Cell[708741, 11690, 843454, 13853, 283, "Input",ExpressionUUID->"9d1fe46a-b1c6-4666-82ee-d3e6cb629b60"]
+Cell[558, 20, 1404, 25, 30, "Input",ExpressionUUID->"5a500cd2-8e51-486a-9a02-f53ae3979069"],
+Cell[1965, 47, 1300, 34, 94, "Input",ExpressionUUID->"ef60a9f7-7699-4226-8ce7-b4b8fcfff371"],
+Cell[CellGroupData[{
+Cell[3290, 85, 704, 16, 94, "Input",ExpressionUUID->"100d043d-35f5-417e-a660-d276bea4be6a"],
+Cell[3997, 103, 223, 2, 34, "Output",ExpressionUUID->"bed39998-d249-4593-ac9f-553ff184c0d2"],
+Cell[4223, 107, 220, 2, 34, "Output",ExpressionUUID->"354180c6-9991-4d8c-8bd7-bf07cd7ac1c7"]
+}, Open  ]],
+Cell[4458, 112, 283241, 4660, 257, "Input",ExpressionUUID->"90352288-595b-4194-b3a2-6b3f63ffb574"],
+Cell[287702, 4774, 319, 8, 37, "Input",ExpressionUUID->"4e84992a-5a0f-4c80-8f2f-aeb015d1794f"],
+Cell[288024, 4784, 422192, 6935, 199, "Input",ExpressionUUID->"c9cc03ab-1acb-43a1-9100-ab59ab5697ed"],
+Cell[710219, 11721, 843454, 13853, 283, "Input",ExpressionUUID->"9d1fe46a-b1c6-4666-82ee-d3e6cb629b60"]
 }
 ]
 *)

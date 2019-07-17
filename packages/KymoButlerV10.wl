@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-BeginPackage["UniKymoButler`"]
+BeginPackage["KymoButlerV10`"]
 
 UniKymoButler::usage="Function analyses a unidirectional kymograph"
 BiKymoButler::usage="Function analyses a bidirectional kymograph"
@@ -8,6 +8,8 @@ BiKymoButlerSegment::usage="Function segments a bidirectional kymograph"
 UniKymoButlerSegment::usage="Function segments a unidirectional kymograph"
 BiKymoButlerTrack::usage="Function tracks a previously segmented bidirectional kymograph"
 UniKymoButlerTrack::usage="Function tracks a previously segmented unidirectional kymograph"
+
+resolveOvlps::usage="Deletes overlapping tracks for benchmarking"
 
 Begin["`Private`"]
 
@@ -449,14 +451,46 @@ BiKymoButlerTrack[pred_,rawkym_,negkym_,bool_,binthresh_,vthr_,vismod_,minSz_,mi
 	BiKymoButlerTrack[pred,rawkym,negkym,bool,binthresh,vthr,vismod,minSz,minFr]
 ];
 
+
+
+
+
+
+
+
+
+
+
+
+(* ::Section:: *)
+(*Benchmarking Functions*)
+
+
+(*coordswithneighbors[nf_,trk_]:=Map[Length[nf[#,{All,3.2}]]>0&,trk];
+
+resolveOvlpTrk[nf_,trk_,trks_]:=Module[{mxidx=Min@{10,Length@trk},del,
+overlaps=Most@SortBy[MapIndexed[{#2,coordswithneighbors[#1,trk]}&,nf],Count[#[[2]],True]&]},
+Sow@overlaps;
+If[And@@overlaps[[-1,2]]&&Length[Extract[trks,overlaps[[-1,1]]]]>Length@trk+2,{},(*check if fulll subset of any other track but only if tracks are of very different length*)
+del=Union@Flatten[Map[
+Which[
+Length@First[Split@#[[2]]]>mxidx&&First@First[Split@#[[2]]]&&Length[Extract[trks,#[[1]]]]>(Length@trk+Sign[trk[[1,1]]-Extract[trks,#[[1]]][[1,1]]]),Range[Length@First@Split@#[[2]]-1],
+Length@Last[Split@#[[2]]]>mxidx&&First@Last[Split@#[[2]]]&&Length[Extract[trks,#[[1]]]]>(Length@trk+Sign[trk[[1,1]]-Extract[trks,#[[1]]][[1,1]]]),Range[1-Length@Last@Split@#[[2]],-1,1],
+True,{}
+]&,overlaps]];
+If[Length@del>0,Delete[trk,Partition[del,1]],trk]
+]
+];
+
+(*delete overlapping tracks*)
+resolveOvlps[trks_]:=Module[{nf=Nearest/@trks},
+DeleteCases[resolveOvlpTrk[nf,#,trks]&/@trks,{}]
+];
+*)
+
+
+
+
 End[]
 EndPackage[]
-
-
-
-
-
-
-
-
 
